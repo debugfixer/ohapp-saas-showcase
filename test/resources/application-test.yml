@@ -1,0 +1,38 @@
+spring:
+
+  datasource:
+    url: jdbc:h2:mem:ohapp;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+      spring:
+        flyway:
+          repair-on-migrate=true:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: false
+
+logging:
+  level:
+    root: WARN
+    org.springframework.web: INFO
+    ru.soat.ohapp: DEBUG
+
+# чтобы Multipart работал в MockMvc
+spring.servlet.multipart:
+  enabled: true
+  max-file-size: 20MB
+  max-request-size: 20MB
+
+# любые ваши кастомные пропсы — в безопасные временные директории
+app:
+  referrals:
+    # где хранить шаблоны/временные файлы при тестах
+    storage-dir: ${java.io.tmpdir}/ohapp-test-templates

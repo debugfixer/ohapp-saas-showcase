@@ -1,0 +1,9 @@
+{
+  "secret": "dev-secret",
+  "slug": "acme",
+  "name": "ACME Corp",
+  "adminEmail": "owner@acme.com",
+  "adminUsername": "acme_admin",
+  "adminDisplayName": "Acme Owner",
+  "adminPassword": "ChangeMe123!"
+}
